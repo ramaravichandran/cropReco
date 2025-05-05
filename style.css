@@ -1,0 +1,209 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for the main content */
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Hidden by default for animation */
+    transform: translateY(50px); /* Start below the view */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply the fade-in and slide-up animation */
+  }
+  
+  /* Keyframe animation for fade-in and slide-up */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Heading Style */
+  h1 {
+    text-align: center;
+    color: #27ae60;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Form Styles */
+  form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Label Styling */
+  label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+    display: block;
+  }
+  
+  /* Input Fields Styling */
+  input[type="number"], select {
+    padding: 12px;
+    width:300px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUpForm 1s ease-out forwards;
+  }
+  
+  input[type="number"]:focus, select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.6);
+  }
+  
+  /* Delay the animation for each form input */
+  input[type="number"]:nth-child(1), select:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  input[type="number"]:nth-child(2), select:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  input[type="number"]:nth-child(3), select:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  input[type="number"]:nth-child(4), select:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  input[type="number"]:nth-child(5), select:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  input[type="number"]:nth-child(6), select:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  
+  input[type="number"]:nth-child(7), select:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  
+  @keyframes fadeInUpForm {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Submit Button Styles */
+  button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeInUpButton 1s ease-out forwards;
+    animation-delay: 0.8s; /* Delay the button animation */
+    grid-column: span 2; /* Make button span across 2 columns */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensure it takes full width of the form */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2ecc71;
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+  }
+  
+  @keyframes fadeInUpButton {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling for the Result Section */
+  .result {
+    background-color: #f1f8e9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2ecc71;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUpResult 1s ease-out forwards;
+  }
+  
+  @keyframes fadeInUpResult {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    input[type="number"], select, button[type="submit"] {
+      font-size: 1rem;
+    }
+  
+    form {
+      grid-template-columns: 1fr; /* Stack form inputs vertically on smaller screens */
+    }
+  }
+  
